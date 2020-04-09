@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel</title>
+</head>
+<style>
+  body {
+    background-color: #8f57fd;
+    margin: 0;
+  }
+  /*                            CAROUSEL                             */
+  .carousel {
+    width: 100%; /*para tomar toda la pantalla*/
+    overflow: scroll; /*para generar el scroll de abajo*/
+    padding: 30px; /*por el espacio en la izquierda*/
+    position: relative; /*position de contenedor*/
+  }
+  .carousel__container {
+    white-space: nowrap; /*mantiene el contenido en la misma linea*/
+    margin: 70px 0; /*padding entre los items*/
+    padding-bottom: 10px; /*quitando un pequeño corte abajo de los items*/
+  }
+  .carousel-item {
+    background-color:aqua;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden; /*para que la imagen no salga del borde*/
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    /*las transiciones en los items seran con estos parametros*/
+    transition: 450ms all;
+    transform-origin: center left;
+    position: relative;
+  }
+  /*cuando hago hover sobre un item a los siguientes se le aplica automaticamente*/
+  .carousel-item:hover ~ .carousel-item{
+    transform: translate3d(100px, 0, 0);
+  }
+  /*si estoy sobre container todos los items se ven opacos*/
+  .carousel__container:hover .carousel-item {
+    opacity: 0.3;
+  }
+  /*si estoy sobre container y estoy sobre item este crece*/
+  .carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  /*                        carousel__details                    */
+  .carousel-item__img {
+    width: 200px;/*tamaño del contenedor*/
+    height: 250px;
+    object-fit: cover;/*hacer fit dentro*/
+  }
+  .carousel-item__details {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    font-size: 10px;
+    opacity: 0;
+    transition: 450ms;
+    padding: 10px;
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+  }
+  .carousel-item__details:hover {
+    opacity: 1;
+  }
+</style>
+<body>
+  <section class="carousel">
+    <div class="carousel__container">
+      <div class="carousel-item">
+        <img class="carousel-item__img" src="https://images.pexels.com/photos/1626481/pexels-photo-1626481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="picture">
+        <div class="carousel-item__details">
+          <div>
+            <img src="./icons/icons8-reproducir-en-círculo-50.png" alt="play">
+            <img src="./icons/icons8-añadir-50.png" alt="add">
+          </div>
+          <p class="carousel-item__details-title">Título descriptivo</p>
+          <p class="carousel-item__details-description">2019 16+ 114 minutos</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="carousel-item__img" src="https://images.pexels.com/photos/6966/abstract-music-rock-bw.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="picture">
+        <div class="carousel-item__details">
+          <div>
+            <img src="./icons/icons8-reproducir-en-círculo-50.png" alt="play">
+            <img src="./icons/icons8-añadir-50.png" alt="add">
+          </div>
+          <p class="carousel-item__details-title">Título descriptivo</p>
+          <p class="carousel-item__details-description">2019 16+ 114 minutos</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="carousel-item__img" src="https://images.pexels.com/photos/761963/pexels-photo-761963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="picture">
+        <div class="carousel-item__details">
+          <div>
+            <img src="./icons/icons8-reproducir-en-círculo-50.png" alt="play">
+            <img src="./icons/icons8-añadir-50.png" alt="add">
+          </div>
+          <p class="carousel-item__details-title">Título descriptivo</p>
+          <p class="carousel-item__details-description">2019 16+ 114 minutos</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="carousel-item__img" src="https://images.pexels.com/photos/374703/pexels-photo-374703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="picture">
+        <div class="carousel-item__details">
+          <div>
+            <img src="./icons/icons8-reproducir-en-círculo-50.png" alt="play">
+            <img src="./icons/icons8-añadir-50.png" alt="add">
+          </div>
+          <p class="carousel-item__details-title">Título descriptivo</p>
+          <p class="carousel-item__details-description">2019 16+ 114 minutos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
